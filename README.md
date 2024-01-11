@@ -1,4 +1,4 @@
-# COSC_2200-G4
+# COSC_2200
 ## Authors
   - Issac Wisniewski
   - John France
