@@ -1,11 +1,12 @@
 # COSC_2200
 
 ## Authors
-  - Issac Wisniewski
   - John France
-  - Rhys Thompson 
   - Ramiyan Gangatharan
   - Sarah Masrie
+  - Rhys Thompson 
+  - Issac Wisniewski
+
 ## Professor
 Yuvaraj Sambandan
 
