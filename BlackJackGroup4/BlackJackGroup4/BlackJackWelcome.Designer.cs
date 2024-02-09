@@ -28,31 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonSettings = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formBlackJackWelcome));
             this.buttonQuit = new System.Windows.Forms.Button();
             this.labelTitle = new System.Windows.Forms.Label();
             this.buttonSingle = new System.Windows.Forms.Button();
             this.buttonMultiPlay = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.buttonSettings = new System.Windows.Forms.Button();
+            this.buttonSoundOn = new System.Windows.Forms.Button();
+            this.buttonSoundOff = new System.Windows.Forms.Button();
+            this.groupBoxMainOptions = new System.Windows.Forms.GroupBox();
+            this.groupBoxMainOptions.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // buttonSettings
-            // 
-            this.buttonSettings.Location = new System.Drawing.Point(35, 281);
-            this.buttonSettings.Name = "buttonSettings";
-            this.buttonSettings.Size = new System.Drawing.Size(89, 66);
-            this.buttonSettings.TabIndex = 0;
-            this.buttonSettings.Text = "Settings";
-            this.buttonSettings.UseVisualStyleBackColor = true;
             // 
             // buttonQuit
             // 
-            this.buttonQuit.Location = new System.Drawing.Point(329, 281);
+            this.buttonQuit.Location = new System.Drawing.Point(495, 76);
             this.buttonQuit.Name = "buttonQuit";
             this.buttonQuit.Size = new System.Drawing.Size(187, 66);
-            this.buttonQuit.TabIndex = 1;
+            this.buttonQuit.TabIndex = 3;
             this.buttonQuit.Text = "Quit";
             this.buttonQuit.UseVisualStyleBackColor = true;
+            this.buttonQuit.Click += new System.EventHandler(this.buttonQuit_Click);
             // 
             // labelTitle
             // 
@@ -68,59 +65,114 @@
             // 
             // buttonSingle
             // 
-            this.buttonSingle.Location = new System.Drawing.Point(329, 137);
+            this.buttonSingle.Location = new System.Drawing.Point(109, 76);
             this.buttonSingle.Name = "buttonSingle";
             this.buttonSingle.Size = new System.Drawing.Size(187, 66);
-            this.buttonSingle.TabIndex = 3;
+            this.buttonSingle.TabIndex = 1;
             this.buttonSingle.Text = "Single Player";
             this.buttonSingle.UseVisualStyleBackColor = true;
+            this.buttonSingle.Click += new System.EventHandler(this.buttonSingle_Click);
+            this.buttonSingle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.buttonSingle_Click);
             // 
             // buttonMultiPlay
             // 
-            this.buttonMultiPlay.Location = new System.Drawing.Point(329, 209);
+            this.buttonMultiPlay.Location = new System.Drawing.Point(302, 76);
             this.buttonMultiPlay.Name = "buttonMultiPlay";
             this.buttonMultiPlay.Size = new System.Drawing.Size(187, 66);
-            this.buttonMultiPlay.TabIndex = 4;
+            this.buttonMultiPlay.TabIndex = 2;
             this.buttonMultiPlay.Text = "Multiplayer ";
             this.buttonMultiPlay.UseVisualStyleBackColor = true;
             this.buttonMultiPlay.Click += new System.EventHandler(this.buttonMultiPlay_Click);
             // 
-            // label2
+            // label1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 254);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(177, 20);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Add Icon here to button";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(213, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(354, 40);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Change buttons to radio buttons/Arrow selection \r\n\r\n";
+            // 
+            // buttonSettings
+            // 
+            this.buttonSettings.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSettings.BackgroundImage")));
+            this.buttonSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonSettings.Location = new System.Drawing.Point(12, 12);
+            this.buttonSettings.Name = "buttonSettings";
+            this.buttonSettings.Size = new System.Drawing.Size(75, 70);
+            this.buttonSettings.TabIndex = 7;
+            this.buttonSettings.UseVisualStyleBackColor = true;
+            this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click_1);
+            // 
+            // buttonSoundOn
+            // 
+            this.buttonSoundOn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSoundOn.BackgroundImage")));
+            this.buttonSoundOn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonSoundOn.Location = new System.Drawing.Point(93, 12);
+            this.buttonSoundOn.Name = "buttonSoundOn";
+            this.buttonSoundOn.Size = new System.Drawing.Size(75, 70);
+            this.buttonSoundOn.TabIndex = 8;
+            this.buttonSoundOn.UseVisualStyleBackColor = true;
+            this.buttonSoundOn.Click += new System.EventHandler(this.buttonSoundOn_Click);
+            // 
+            // buttonSoundOff
+            // 
+            this.buttonSoundOff.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSoundOff.BackgroundImage")));
+            this.buttonSoundOff.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonSoundOff.Location = new System.Drawing.Point(93, 12);
+            this.buttonSoundOff.Name = "buttonSoundOff";
+            this.buttonSoundOff.Size = new System.Drawing.Size(75, 70);
+            this.buttonSoundOff.TabIndex = 9;
+            this.buttonSoundOff.UseVisualStyleBackColor = true;
+            this.buttonSoundOff.Visible = false;
+            this.buttonSoundOff.Click += new System.EventHandler(this.buttonSoundOff_Click);
+            // 
+            // groupBoxMainOptions
+            // 
+            this.groupBoxMainOptions.Controls.Add(this.buttonSingle);
+            this.groupBoxMainOptions.Controls.Add(this.buttonQuit);
+            this.groupBoxMainOptions.Controls.Add(this.label1);
+            this.groupBoxMainOptions.Controls.Add(this.buttonMultiPlay);
+            this.groupBoxMainOptions.Location = new System.Drawing.Point(12, 138);
+            this.groupBoxMainOptions.Name = "groupBoxMainOptions";
+            this.groupBoxMainOptions.Size = new System.Drawing.Size(776, 188);
+            this.groupBoxMainOptions.TabIndex = 10;
+            this.groupBoxMainOptions.TabStop = false;
+            this.groupBoxMainOptions.Text = "groupBox1";
+            this.groupBoxMainOptions.Enter += new System.EventHandler(this.groupBoxMainOptions_Enter);
             // 
             // formBlackJackWelcome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.buttonMultiPlay);
-            this.Controls.Add(this.buttonSingle);
-            this.Controls.Add(this.labelTitle);
-            this.Controls.Add(this.buttonQuit);
+            this.Controls.Add(this.buttonSoundOn);
             this.Controls.Add(this.buttonSettings);
+            this.Controls.Add(this.labelTitle);
+            this.Controls.Add(this.buttonSoundOff);
+            this.Controls.Add(this.groupBoxMainOptions);
             this.Name = "formBlackJackWelcome";
             this.Text = "Welcome To Black Jack!";
             this.Load += new System.EventHandler(this.formBlackJackWelcome_Load);
+            this.Enter += new System.EventHandler(this.formBlackJackWelcome_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.formBlackJackWelcome_Load);
+            this.groupBoxMainOptions.ResumeLayout(false);
+            this.groupBoxMainOptions.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button buttonSettings;
         private System.Windows.Forms.Button buttonQuit;
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Button buttonSingle;
         private System.Windows.Forms.Button buttonMultiPlay;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonSettings;
+        private System.Windows.Forms.Button buttonSoundOn;
+        private System.Windows.Forms.Button buttonSoundOff;
+        private System.Windows.Forms.GroupBox groupBoxMainOptions;
     }
 }
 
