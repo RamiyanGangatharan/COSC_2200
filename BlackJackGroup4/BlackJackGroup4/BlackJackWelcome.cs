@@ -52,8 +52,12 @@ namespace BlackJackGroup4
 
         private void buttonSingle_Click(object sender, EventArgs e)
         {
+            singlePlayMenu singleMenuForm = new singlePlayMenu(); 
+            singleMenuForm.Show();
 
+            this.Hide();
         }
+
 
 
         private void buttonSettings_MouseEnter(object sender, EventArgs e)
