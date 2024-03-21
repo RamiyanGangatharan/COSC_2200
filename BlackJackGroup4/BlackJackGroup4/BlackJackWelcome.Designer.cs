@@ -159,7 +159,8 @@
             this.Controls.Add(this.buttonSoundOff);
             this.Controls.Add(this.groupBoxMainOptions);
             this.Name = "formBlackJackWelcome";
-            this.Text = " ";
+            this.Text = " Welcome!";
+            this.TransparencyKey = System.Drawing.Color.Transparent;
             this.Load += new System.EventHandler(this.formBlackJackWelcome_Load);
             this.Enter += new System.EventHandler(this.formBlackJackWelcome_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.formBlackJackWelcome_Load);
