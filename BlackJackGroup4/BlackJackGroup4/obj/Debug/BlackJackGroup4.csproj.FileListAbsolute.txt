@@ -9,3 +9,11 @@ C:\Users\rthom\source\repos\BlackJackGroup4\BlackJackGroup4\bin\Debug\BlackJackG
 C:\Users\rthom\source\repos\BlackJackGroup4\BlackJackGroup4\bin\Debug\BlackJackGroup4.pdb
 C:\Users\rthom\source\repos\BlackJackGroup4\BlackJackGroup4\obj\Debug\BlackJackGroup4.exe
 C:\Users\rthom\source\repos\BlackJackGroup4\BlackJackGroup4\obj\Debug\BlackJackGroup4.pdb
+C:\Users\Sarah\source\repos\COSC_2200\BlackJackGroup4\BlackJackGroup4\obj\Debug\BlackJackGroup4.csproj.AssemblyReference.cache
+C:\Users\Sarah\source\repos\COSC_2200\BlackJackGroup4\BlackJackGroup4\obj\Debug\BlackJackGroup4.formBlackJackWelcome.resources
+C:\Users\Sarah\source\repos\COSC_2200\BlackJackGroup4\BlackJackGroup4\obj\Debug\BlackJackGroup4.multiPlayerSettings.resources
+C:\Users\Sarah\source\repos\COSC_2200\BlackJackGroup4\BlackJackGroup4\obj\Debug\BlackJackGroup4.Properties.Resources.resources
+C:\Users\Sarah\source\repos\COSC_2200\BlackJackGroup4\BlackJackGroup4\obj\Debug\BlackJackGroup4.csproj.GenerateResource.cache
+C:\Users\Sarah\source\repos\COSC_2200\BlackJackGroup4\BlackJackGroup4\obj\Debug\BlackJackGroup4.csproj.CoreCompileInputs.cache
+C:\Users\Sarah\source\repos\COSC_2200\BlackJackGroup4\BlackJackGroup4\obj\Debug\BlackJackGroup4.exe
+C:\Users\Sarah\source\repos\COSC_2200\BlackJackGroup4\BlackJackGroup4\obj\Debug\BlackJackGroup4.pdb
