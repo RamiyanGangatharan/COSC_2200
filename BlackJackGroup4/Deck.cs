@@ -1,89 +1,78 @@
-﻿using System;
+﻿using BlackJack_Console;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 
 namespace BlackJackGroup4
 {
-    // Enum to represent card suits
-    public enum Suit
-    {
-        Hearts,
-        Diamonds,
-        Clubs,
-        Spades
-    }
-
-    // Enum to represent card ranks
-    public enum Rank
-    {
-        Ace,
-        Two,
-        Three,
-        Four,
-        Five,
-        Six,
-        Seven,
-        Eight,
-        Nine,
-        Ten,
-        Jack,
-        Queen,
-        King
-    }
-
-    // Class to represent individual playing cards
-    public class Card
-    {
-        public Suit Suit { get; }
-        public Rank Rank { get; }
-        public Image Image { get; }
-
-        public Card(Suit suit, Rank rank, Image image)
-        {
-            Suit = suit;
-            Rank = rank;
-            Image = image;
-        }
-
-        public override string ToString()
-        {
-            return $"{Rank} of {Suit}";
-        }
-    }
-
-    // Class to represent a deck of playing cards
+    /// <summary>
+    /// Deck.cs contains the class Deck, which contains one property, a list of Card items.
+    /// 
+    /// Deck can be intialized in two ways, based on getting a boolean originating from the main menu form. 
+    /// If false a standard deck of 52 cards is created, if true then two Joker cards are also added. 
+    /// 
+    /// Deck has 5 public methods:
+    /// 
+    /// -Shuffle(): randomly reorders the cards in the deck.
+    /// 
+    /// -Deal(): Returns the card on the 'top' of the deck, and removes it from the deck.
+    /// 
+    /// -Reset(): Initialized a new standard deck.
+    /// 
+    /// -isEmpty(): Returns a boolean, true if there are zero remaining cards in the deck, and false otherwise.
+    /// 
+    /// -DisplayRemainingCards(): for debugging help.
+    /// 
+    /// </summary>
+    
     public class Deck
     {
         private List<Card> cards;
+        
 
         // Create a standard deck of cards
-        public Deck()
+        public Deck(bool JokerMode)
         {
             cards = new List<Card>();
-            InitializeDeck();
+            InitializeDeck(JokerMode);
         }
 
-        // Initialize deck with 52 cards
-        private void InitializeDeck()
+        // Initialize deck with 52 cards or 52 + 2 Jokers.
+        private void InitializeDeck(bool JokerMode)
         {
             foreach (Suit suit in Enum.GetValues(typeof(Suit)))
             {
-                foreach (Rank rank in Enum.GetValues(typeof(Rank)))
+                if (suit != Suit.NULL)
                 {
-        // Load image from resources using suit and rank
-                    string imageName = $"{suit.ToString().ToLower()}_{rank.ToString().ToLower()}";
-                    Image image = Properties.Resources.ResourceManager.GetObject(imageName) as Image;
-
-        // Create a card with the suit, rank, and associated image
-                    Card card = new Card(suit, rank, image);
-                    cards.Add(card);
+                    foreach (Rank rank in Enum.GetValues(typeof(Rank)))
+                    {
+                        if (rank != Rank.Joker)
+                        {
+                            // Load image from resources using suit and rank
+                            string imageName = $"{suit.ToString().ToLower()}_{rank.ToString().ToLower()}";
+                            Image image = Properties.Resources.ResourceManager.GetObject(imageName) as Image;
+                            // Create a card with the suit, rank, and associated image
+                            Card card = new Card(suit, rank, image);
+                            cards.Add(card);
+                        }
+                    }
                 }
             }
+            if (JokerMode)
+            {
+                Image image = Properties.Resources.null_joker;
+                // Create a card with the suit, rank, and associated image
+                Card card = new Card(Suit.NULL, Rank.Joker, image);
+                cards.Add(card);
+                cards.Add(card);
+            }
+
         }
 
         // Shuffle the deck
         public void Shuffle()
         {
+            // Derived from: https://stackoverflow.com/questions/273313/randomize-a-listt
             Random rng = new Random();
             int n = cards.Count;
             while (n > 1)
@@ -110,10 +99,10 @@ namespace BlackJackGroup4
         }
 
         // Reset to full standard deck
-        public void Reset()
+        public void Reset(bool joker)
         {
             cards.Clear();
-            InitializeDeck();
+            InitializeDeck(joker);
         }
 
         // Display remaining cards in deck (for debugging)

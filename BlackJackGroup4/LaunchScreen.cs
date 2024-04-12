@@ -36,7 +36,7 @@ namespace BlackJackGroup4
         {
             // Hide the form and show the main menu form when any key is pressed.
             this.Hide();
-            formBlackJackWelcome mainMenu = new formBlackJackWelcome();
+            BlackJackWelcome mainMenu = new BlackJackWelcome();
             mainMenu.Show();
         }
 
@@ -49,6 +49,10 @@ namespace BlackJackGroup4
                 g.DrawImage(image, 0, 0, width, height);
             }
             return result;
+        }
+        private void Form_Closing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

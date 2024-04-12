@@ -6,12 +6,12 @@ namespace BlackJackGroup4
 {
     public partial class gameSettings : Form
     {
-        private formBlackJackWelcome mainMenu;
+        private BlackJackWelcome mainMenu;
         private Image selectedBackground;
         private static string selectedMusicFilePath;
         private Theme theme;
 
-        public gameSettings(formBlackJackWelcome mainMenuForm, Theme theme)
+        public gameSettings(BlackJackWelcome mainMenuForm, Theme theme)
         {
             InitializeComponent();
             mainMenu = mainMenuForm;
@@ -32,6 +32,7 @@ namespace BlackJackGroup4
 
         private void gameSettings_Load(object sender, EventArgs e)
         {
+            panelSettings.BackColor = Color.FromArgb(130, Color.DimGray);
         }
         private void btnVegasImg_Click(object sender, EventArgs e)
         {
@@ -56,7 +57,27 @@ namespace BlackJackGroup4
             selectedMusicFilePath = "canada.wav";
             ApplySettings();
         }
+        public static string selectedCardBackName = "card_back1";
 
+
+        private void btnDefaultCard_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Default cards selected");
+            selectedCardBackName = "card_back1";
+        }
+
+        private void btnCardAstro_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Astro cards selected");
+            selectedCardBackName = "card_back2";
+        }
+
+
+        private void btnCaesarsPalace_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Caesars cards selected");
+            selectedCardBackName = "card_back3";
+        }
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -80,6 +101,14 @@ namespace BlackJackGroup4
         public static string GetSelectedMusicFilePath()
         {
             return selectedMusicFilePath;
+        }
+        public static string GetCardFace()
+        {
+            return selectedCardBackName;
+        }
+        private void Form_Closing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

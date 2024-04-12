@@ -37,6 +37,9 @@
     </StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,14 +53,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\COSC_2200\BlackJackGroup4\BlackJackGroup4\BlackJackWelcome.cs">
+    <Compile Include="Admin.cs" />
+    <Compile Include="BlackJackWelcome.cs">
       <SubType>Form</SubType>
-      <Link>BlackJackWelcome.cs</Link>
     </Compile>
-    <Compile Include="..\..\COSC_2200\BlackJackGroup4\BlackJackGroup4\BlackJackWelcome.Designer.cs">
+    <Compile Include="BlackJackWelcome.Designer.cs">
       <DependentUpon>BlackJackWelcome.cs</DependentUpon>
-      <Link>BlackJackWelcome.Designer.cs</Link>
     </Compile>
+    <Compile Include="Card.cs" />
     <Compile Include="Class Files\Broker.cs" />
     <Compile Include="Class Files\Card.cs" />
     <Compile Include="Class Files\Deck.cs" />
@@ -69,7 +72,17 @@
     <Compile Include="CircularButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Dealer.cs" />
     <Compile Include="Deck.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="Hand.cs" />
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MultiplayerController.cs" />
     <Compile Include="MusicPlayer.cs" />
     <Compile Include="gameSettings.cs">
       <SubType>Form</SubType>
@@ -95,6 +108,9 @@
     <Compile Include="MultiPlayerSettings.Designer.cs">
       <DependentUpon>MultiPlayerSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Player.cs" />
+    <Compile Include="PlayerManager.cs" />
+    <Compile Include="PlayerStats.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SinglePlayer.cs">
@@ -103,16 +119,26 @@
     <Compile Include="SinglePlayer.Designer.cs">
       <DependentUpon>SinglePlayer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Stats.cs" />
+    <Compile Include="StatsViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatsViewer.Designer.cs">
+      <DependentUpon>StatsViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Theme.cs" />
-    <EmbeddedResource Include="..\..\COSC_2200\BlackJackGroup4\BlackJackGroup4\BlackJackWelcome.resx">
+    <Compile Include="User.cs" />
+    <EmbeddedResource Include="BlackJackWelcome.resx">
       <DependentUpon>BlackJackWelcome.cs</DependentUpon>
-      <Link>BlackJackWelcome.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="gameSettings.resx">
       <DependentUpon>gameSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LaunchScreen.resx">
       <DependentUpon>LaunchScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="multiPlayerMenu.resx">
       <DependentUpon>multiPlayerMenu.cs</DependentUpon>
@@ -133,6 +159,7 @@
     <EmbeddedResource Include="SinglePlayer.resx">
       <DependentUpon>SinglePlayer.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -358,6 +385,51 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\clubs_two.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sound_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sound_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\card_back2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\card_back1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\null_joker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cardsetTitle1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChooseATheme.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_title4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\theme_select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\card_face.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\card_back3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tutorial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tutorial2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

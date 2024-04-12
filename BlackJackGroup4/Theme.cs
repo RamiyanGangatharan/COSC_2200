@@ -8,6 +8,8 @@ namespace BlackJackGroup4
     public class Theme
     {
         private Form form; // Instance variable to hold the form
+        private SoundPlayer musicPlayer; // Instance variable to hold the music player
+        private string musicPath; // Instance variable to hold the path of the music file
 
         public Theme(Form form)
         {
@@ -30,18 +32,11 @@ namespace BlackJackGroup4
                 form.BackgroundImageLayout = ImageLayout.Stretch;
             }
 
-            // Play background music
+            // Initialize or change the background music
             if (!string.IsNullOrEmpty(musicPath) && System.IO.File.Exists(musicPath))
             {
-                try
-                {
-                    SoundPlayer player = new SoundPlayer(musicPath);
-                    player.PlayLooping();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error playing background music: " + ex.Message);
-                }
+                this.musicPath = musicPath;
+                InitializeMusicPlayer();
             }
         }
 
@@ -53,5 +48,32 @@ namespace BlackJackGroup4
             ApplyTheme(defaultBackground, defaultMusicPath);
         }
 
+        // Initialize the music player
+        private void InitializeMusicPlayer()
+        {
+            if (musicPlayer != null)
+            {
+                musicPlayer.Dispose(); // Dispose the existing music player
+            }
+            musicPlayer = new SoundPlayer(musicPath);
+        }
+
+        // Play the background music
+        public void PlayBackgroundMusic()
+        {
+            if (musicPlayer != null)
+            {
+                musicPlayer.PlayLooping();
+            }
+        }
+
+        // Stop the background music
+        public void StopBackgroundMusic()
+        {
+            if (musicPlayer != null)
+            {
+                musicPlayer.Stop();
+            }
+        }
     }
 }

@@ -68,6 +68,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnJRMultiOption);
             this.Controls.Add(this.btnBJMultiOption);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "multiPlayerMenu";
             this.Text = "multiPlayerMenu";
             this.Load += new System.EventHandler(this.multiPlayerMenu_Load);
